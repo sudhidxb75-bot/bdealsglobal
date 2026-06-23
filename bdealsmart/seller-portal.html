@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Seller Portal | BdealsMart</title><meta name="description" content="Seller quotation page for Buy Now orders and RFQs."><link rel="stylesheet" href="assets/style.css"></head><body><header class="top">
+  <div class="nav">
+    <a class="brand-text" href="index.html">Bdeals<span>Mart</span></a>
+    <button class="menu-toggle" type="button" aria-label="Menu">☰</button>
+    <nav class="menu" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="product-catalogue.html">Product Catalogue</a>
+      <a href="buy-now.html">Buy Now</a>
+      <a href="request-quote.html">Request Quote</a>
+      <a href="suppliers.html">Suppliers</a>
+      <a href="channel-partners.html">Channel Partners</a>
+      <a href="hub-partners.html">Hub Partners</a>
+      <a href="register.html">Register</a>
+    </nav>
+    <label class="country-pill">🌐 <select class="countrySelect" id="countrySelect"><option value="IN">India</option><option value="AE">UAE</option></select></label>
+  </div>
+</header><section class="hero page-hero"><h1>Seller Portal</h1><h2>Submit quotations and order confirmations.</h2><p>Registered sellers can submit quotations for Buy Now requests and RFQs. Buyer contact details remain protected.</p></section>
+<section>
+  <div class="grid two">
+    <form class="formbox" data-submit="saveBuyNowQuote">
+      <h2>Buy Now Seller Quote</h2>
+      <p class="mini">Use this when BdealsMart sends you a Buy Now Order ID for stock and price confirmation.</p>
+      <input type="hidden" name="Country" class="countryField">
+      <label>Order ID</label><input name="OrderID" required>
+      <label>Seller ID</label><input name="SellerID" required>
+      <label>Supplier ID</label><input name="SupplierID">
+      <label>Product ID</label><input name="ProductID">
+      <label>Final Unit Price</label><input name="FinalUnitPrice" required>
+      <label>Quantity</label><input name="Quantity" required>
+      <label>Final Total Amount</label><input name="FinalTotalAmount" required>
+      <label>Available Quantity</label><input name="AvailableQuantity">
+      <label>MOQ Confirmed</label><select name="MOQConfirmed"><option>Yes</option><option>No</option><option>Not Applicable</option></select>
+      <label>Dispatch Date</label><input type="date" name="DispatchDate">
+      <label>Delivery Timeline</label><input name="DeliveryTimeline">
+      <label>Quote Valid Till</label><input type="date" name="Validity">
+      <label>Quotation / Proforma URL</label><input name="QuotationURL" placeholder="Google Drive / PDF URL">
+      <label>Seller Remarks</label><textarea name="SellerRemarks"></textarea>
+      <button class="btn green" type="submit">Submit Buy Now Quote</button>
+      <p class="status notice"></p>
+    </form>
+    <form class="formbox" data-submit="saveRFQQuote">
+      <h2>RFQ Seller Quote</h2>
+      <p class="mini">Use this when BdealsMart sends you an RFQ ID for quotation.</p>
+      <input type="hidden" name="Country" class="countryField">
+      <label>RFQ ID</label><input name="RFQID" required>
+      <label>Seller ID</label><input name="SellerID" required>
+      <label>Supplier ID</label><input name="SupplierID">
+      <label>Product ID</label><input name="ProductID">
+      <label>Unit Price</label><input name="UnitPrice" required>
+      <label>Quantity</label><input name="Quantity" required>
+      <label>Total Amount</label><input name="TotalAmount" required>
+      <label>MOQ</label><input name="MOQ">
+      <label>Delivery Time</label><input name="DeliveryTime">
+      <label>Quote Valid Till</label><input type="date" name="Validity">
+      <label>Attachment / Catalogue URL</label><input name="AttachmentURL">
+      <label>Seller Remarks</label><textarea name="SellerRemarks"></textarea>
+      <button class="btn" type="submit">Submit RFQ Quote</button>
+      <p class="status notice"></p>
+    </form>
+  </div>
+</section>
+<section class="impact"><div class="section-title"><h2>Protected Payment Rule</h2><p>BdealsMart sends payment details to the buyer only after seller quote confirmation and admin approval. Seller settlement is released only after delivery confirmation.</p></div></section><footer><p><b>BdealsMart</b> — Connecting Businesses. Creating Opportunities.</p><p>Part of Bdeals Global | India: +91 8921 696649 | Dubai: +971 558962348</p></footer><script src="assets/app.js"></script></body></html>
