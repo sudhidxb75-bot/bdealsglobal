@@ -12,13 +12,32 @@
     header{background:linear-gradient(90deg,#010b1d,#041b3a 45%,#062b58);color:white;padding:12px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;box-shadow:0 8px 26px rgba(0,0,0,.24);border-bottom:1px solid rgba(56,189,248,.35)}
     .brand{display:flex;align-items:center;text-decoration:none;min-width:235px}
     .brand img{height:92px;width:auto;display:block;filter:drop-shadow(0 0 18px rgba(56,189,248,.55)) drop-shadow(0 8px 16px rgba(0,0,0,.35))}
-    nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:flex-end}
-    nav a{color:white;text-decoration:none;font-size:15px;font-weight:800;opacity:.96;white-space:nowrap}
+    nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{color:white;text-decoration:none;font-size:14px;font-weight:800;opacity:.96;white-space:nowrap}
     nav a:hover{color:#67e8f9}
-    .hero{background:linear-gradient(90deg,rgba(3,16,39,.95) 0%,rgba(7,27,58,.86) 45%,rgba(7,27,58,.55) 100%),url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80');background-size:cover;background-position:center;color:white;padding:110px 7% 100px;text-align:left}
-    .hero h1{font-size:54px;max-width:930px;line-height:1.12;margin-bottom:18px;letter-spacing:-1px}
-    .hero h2{font-size:28px;color:#86efac;margin-bottom:22px;font-weight:900}
-    .hero p{font-size:20px;max-width:820px;margin-bottom:32px;color:#e5e7eb}
+    .hero-slider{position:relative;min-height:680px;color:white;overflow:hidden;background:#061b3a}
+    .hero-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .8s ease,visibility .8s ease;background-size:cover;background-position:center;display:flex;align-items:center;padding:105px 7% 95px}
+    .hero-slide.active{opacity:1;visibility:visible;z-index:1}
+    .hero-slide:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,16,39,.96) 0%,rgba(7,27,58,.84) 48%,rgba(7,27,58,.50) 100%);z-index:0}
+    .hero-content{position:relative;z-index:2;max-width:1180px}
+    .hero-content h1{font-size:54px;max-width:970px;line-height:1.12;margin-bottom:18px;letter-spacing:-1px;color:#fff}
+    .hero-content h2{font-size:30px;color:#86efac;margin-bottom:22px;font-weight:900}
+    .hero-content p{font-size:20px;max-width:860px;margin-bottom:32px;color:#e5e7eb}
+    .hero-controls{position:absolute;right:7%;bottom:34px;z-index:4;display:flex;align-items:center;gap:12px}
+    .hero-arrow{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.75);background:rgba(255,255,255,.08);color:#fff;font-size:24px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    .hero-arrow:hover{background:#38bdf8;color:#071b3a}
+    .hero-dots{display:flex;gap:8px}
+    .hero-dot{width:10px;height:10px;border-radius:50%;border:0;background:rgba(255,255,255,.45);cursor:pointer}
+    .hero-dot.active{background:#22c55e;width:28px;border-radius:20px}
+
+    .brand-banner{background:linear-gradient(135deg,#061b3a,#0d3d75);color:white;padding:42px 7%;border-top:1px solid rgba(56,189,248,.25);border-bottom:1px solid rgba(56,189,248,.25)}
+    .brand-banner-inner{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;max-width:1320px;margin:auto}
+    .brand-panel{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:30px;box-shadow:0 12px 30px rgba(0,0,0,.18)}
+    .brand-panel h2{font-size:34px;margin-bottom:8px;color:white}
+    .brand-panel h3{font-size:20px;color:#86efac;margin-bottom:12px}
+    .brand-panel p{color:#dbeafe;margin-bottom:22px;font-size:16px}
+    .banner-tag{display:inline-block;background:#22c55e;color:white;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:900;margin-bottom:12px}
+    .brand-panel.global .banner-tag{background:#38bdf8;color:#061b3a}
     .btn{display:inline-block;background:#38bdf8;color:#071b3a;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:900;margin:6px 8px 6px 0;border:0;cursor:pointer;font-size:15px;box-shadow:0 8px 18px rgba(0,0,0,.18)}
     .btn.green{background:#22c55e;color:white}.btn.secondary{background:transparent;color:white;border:1px solid rgba(255,255,255,.8)}.btn.dark{background:#071b3a;color:white}.btn.orange{background:#f97316;color:white}
     section{padding:78px 7%}.white{background:white}.blue{background:#071b3a;color:white}.blue .section-title h2,.blue h3{color:white}.blue .section-title p,.blue p{color:#d1d5db}
@@ -32,8 +51,13 @@
     form{display:none}.form-active{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}label{font-size:13px;font-weight:800;color:#334155}input,select,textarea{width:100%;padding:13px;border:1px solid #cbd5e1;border-radius:8px;font-size:15px;background:white}textarea{min-height:110px}.full{grid-column:1/-1}.status{grid-column:1/-1;padding:12px;border-radius:8px;display:none}.success{background:#dcfce7;color:#166534}.error{background:#fee2e2;color:#991b1b}
     .contact-box{max-width:760px;margin:auto;background:#f1f5f9;padding:38px;border-radius:16px;text-align:center}.contact-box h3{font-size:28px;color:#071b3a;margin-bottom:16px}.contact-box p{margin-bottom:10px;color:#374151}
     footer{background:#071b3a;color:#d1d5db;text-align:center;padding:30px 7%;font-size:14px}footer img{height:88px;margin-bottom:12px;filter:drop-shadow(0 0 12px rgba(56,189,248,.25))}
-    @media(max-width:1080px){header{padding:12px 5%;align-items:center}.brand{min-width:190px}.brand img{height:76px}nav{gap:14px}nav a{font-size:14px}.hero h1{font-size:42px}}
-    @media(max-width:760px){header{flex-direction:column;gap:10px}.brand{min-width:auto}.brand img{height:78px}nav{text-align:center;justify-content:center;gap:12px}.hero{text-align:center;padding:82px 6%}.hero h1{font-size:35px}.hero h2{font-size:22px}.grid,.grid.two,.grid.five{grid-template-columns:1fr}.form-active{grid-template-columns:1fr}.full{grid-column:1}.section-title h2{font-size:30px}}
+    @media(max-width:1080px){header{padding:12px 5%;align-items:center}.brand{min-width:190px}.brand img{height:76px}nav{gap:14px}nav a{font-size:14px}.hero-slider{min-height:620px}.hero-content h1{font-size:42px}.hero-content h2{font-size:25px}.hero-content p{font-size:18px}}
+    @media(max-width:760px){header{flex-direction:column;gap:10px}.brand{min-width:auto}.brand img{height:78px}nav{text-align:center;justify-content:center;gap:12px}.hero-slider{min-height:610px}.hero-slide{padding:72px 6% 95px;text-align:center;align-items:center}.hero-content h1{font-size:35px}.hero-content h2{font-size:22px}.hero-content p{font-size:17px;margin-left:auto;margin-right:auto}.hero-controls{right:50%;transform:translateX(50%);bottom:24px}.grid,.grid.two,.grid.five{grid-template-columns:1fr}.form-active{grid-template-columns:1fr}.full{grid-column:1}.section-title h2{font-size:30px}
+      .brand-banner{padding:32px 6%}
+      .brand-banner-inner{grid-template-columns:1fr}
+      .brand-panel{text-align:center;padding:26px 20px}
+      .brand-panel h2{font-size:30px}
+    }
   </style>
 </head>
 <body>
@@ -41,6 +65,7 @@
   <a class="brand" href="#home"><img src="assets/bdeals-logo.png" alt="Bdeals logo"></a>
   <nav>
     <a href="#home">Home</a>
+    <a href="/bdealsmart/">BdealsMart</a>
     <a href="#buy">Buy</a>
     <a href="#sell">Sell</a>
     <a href="#business">Grow Business</a>
@@ -51,15 +76,79 @@
   </nav>
 </header>
 
-<section class="hero" id="home">
-  <h1>Your Global Business Development &amp; Sales Growth Partner</h1>
-  <h2>Connecting Opportunities. Creating Growth.</h2>
-  <p>Bdeals Global connects buyers, sellers, businesses, channel partners and referral partners to create real opportunities, accelerate growth and close successful deals.</p>
-  <a href="#forms" class="btn">Buy</a>
-  <a href="#forms" class="btn">Sell</a>
-  <a href="#forms" class="btn green">Grow Business</a>
-  <a href="#forms" class="btn secondary">Partner & Earn</a>
-  <a href="#forms" class="btn orange">Refer & Earn</a>
+<section class="hero-slider" id="home">
+  <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80')">
+    <div class="hero-content">
+      <h1>Your Global Business Development &amp; Sales Growth Partner</h1>
+      <h2>Connecting Opportunities. Creating Growth.</h2>
+      <p>Bdeals Global connects buyers, sellers, businesses, channel partners and referral partners to create real opportunities, accelerate growth and close successful deals.</p>
+      <a href="#forms" class="btn green">Grow Business</a>
+      <a href="#partner" class="btn secondary">Partner &amp; Earn</a>
+      <a href="#forms" class="btn orange">Refer &amp; Earn</a>
+    </div>
+  </div>
+
+  <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=80')">
+    <div class="hero-content">
+      <h1>BdealsMart B2B Marketplace</h1>
+      <h2>Connecting Businesses. Creating Opportunities.</h2>
+      <p>Source products, discover suppliers, request quotes and register your business through a trusted B2B ecosystem.</p>
+      <a href="/bdealsmart/" class="btn dark">Explore BdealsMart</a>
+      <a href="/bdealsmart/register.html" class="btn green">Register Business</a>
+    </div>
+  </div>
+
+  <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1800&q=80')">
+    <div class="hero-content">
+      <h1>Build Income Through Business Connections</h1>
+      <h2>Become a Bdeals Channel Partner</h2>
+      <p>Generate leads, introduce buyers and sellers, support genuine opportunities and earn through successful business connections.</p>
+      <a href="#partner" class="btn green">Become a Channel Partner</a>
+      <a href="#forms" class="btn secondary">Submit Enquiry</a>
+    </div>
+  </div>
+
+  <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80')">
+    <div class="hero-content">
+      <h1>India • UAE • Global Opportunities</h1>
+      <h2>Local Connections. International Growth.</h2>
+      <p>Explore business growth, sourcing, sales support and partnership opportunities across India, UAE and future international markets.</p>
+      <a href="/bdealsmart/" class="btn dark">Explore Opportunities</a>
+      <a href="#contact" class="btn green">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="hero-controls" aria-label="Hero slider controls">
+    <button class="hero-arrow hero-prev" type="button" aria-label="Previous slide">‹</button>
+    <div class="hero-dots" aria-label="Slide indicators">
+      <button class="hero-dot active" type="button" aria-label="Slide 1"></button>
+      <button class="hero-dot" type="button" aria-label="Slide 2"></button>
+      <button class="hero-dot" type="button" aria-label="Slide 3"></button>
+      <button class="hero-dot" type="button" aria-label="Slide 4"></button>
+    </div>
+    <button class="hero-arrow hero-next" type="button" aria-label="Next slide">›</button>
+  </div>
+</section>
+
+<section class="brand-banner" id="bdealsmart-promo">
+  <div class="brand-banner-inner">
+    <div class="brand-panel global">
+      <span class="banner-tag">BDEALS GLOBAL</span>
+      <h2>Business Development & Sales Growth</h2>
+      <h3>Your Global Business Development & Sales Growth Partner</h3>
+      <p>Generate leads, create partnerships, support deal closures and grow your business through a performance-driven business network.</p>
+      <a href="#forms" class="btn">Submit Enquiry</a>
+    </div>
+
+    <div class="brand-panel mart">
+      <span class="banner-tag">BDEALSMART</span>
+      <h2>B2B Marketplace</h2>
+      <h3>Connecting Businesses. Creating Opportunities.</h3>
+      <p>Source products, discover suppliers, request quotes and register your business through the BdealsMart B2B ecosystem.</p>
+      <a href="/bdealsmart/" class="btn green">Explore BdealsMart</a>
+      <a href="/bdealsmart/register.html" class="btn secondary">Register Business</a>
+    </div>
+  </div>
 </section>
 
 <section class="white" id="about">
@@ -160,6 +249,28 @@
   </div>
 </section>
 
+
+<section class="white" id="bdealsmart">
+  <div class="section-title">
+    <h2>BdealsMart</h2>
+    <p>Connecting Businesses. Creating Opportunities.</p>
+  </div>
+  <div class="grid two">
+    <div class="card">
+      <div class="icon">🛍️</div>
+      <h3>B2B Marketplace</h3>
+      <p>Source products, discover suppliers, request quotations and grow your business through a trusted B2B ecosystem.</p>
+      <a href="/bdealsmart/" class="btn">Visit BdealsMart</a>
+    </div>
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3>India & UAE Opportunities</h3>
+      <p>Explore sourcing, supplier, channel partner and hub partner opportunities across India, UAE and future international markets.</p>
+      <a href="/bdealsmart/register.html" class="btn green">Register Now</a>
+    </div>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="section-title"><h2>Contact Bdeals Global</h2><p>Let us discuss how Bdeals can help you buy, sell, grow, partner or earn through referrals.</p></div>
   <div class="contact-box">
@@ -179,6 +290,32 @@
 </footer>
 
 <script>
+
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  const heroDots = document.querySelectorAll('.hero-dot');
+  const heroNext = document.querySelector('.hero-next');
+  const heroPrev = document.querySelector('.hero-prev');
+  let heroIndex = 0;
+  let heroTimer;
+
+  function showHeroSlide(index){
+    heroIndex = (index + heroSlides.length) % heroSlides.length;
+    heroSlides.forEach((slide, i)=>slide.classList.toggle('active', i === heroIndex));
+    heroDots.forEach((dot, i)=>dot.classList.toggle('active', i === heroIndex));
+  }
+
+  function nextHeroSlide(){ showHeroSlide(heroIndex + 1); }
+  function prevHeroSlide(){ showHeroSlide(heroIndex - 1); }
+  function startHeroSlider(){ heroTimer = setInterval(nextHeroSlide, 5000); }
+  function resetHeroSlider(){ clearInterval(heroTimer); startHeroSlider(); }
+
+  if(heroSlides.length){
+    heroNext.addEventListener('click',()=>{ nextHeroSlide(); resetHeroSlider(); });
+    heroPrev.addEventListener('click',()=>{ prevHeroSlide(); resetHeroSlider(); });
+    heroDots.forEach((dot, i)=>dot.addEventListener('click',()=>{ showHeroSlide(i); resetHeroSlider(); }));
+    startHeroSlider();
+  }
+
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx-yHowK0IURmpI095fu2jilLM7TH8bIizbWvg5kUNEGkiNXYvNZq9NRXYmLzC_EVre/exec";
   document.querySelectorAll('.tab').forEach(btn=>{
     btn.addEventListener('click',()=>{
