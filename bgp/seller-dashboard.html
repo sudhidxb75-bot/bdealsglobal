@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Seller Dashboard | Bdeals Global Properties</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#163d5c">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BGP">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+  <meta name="description" content="Trusted real estate mediator platform connecting verified property sellers and genuine buyers through a private managed process.">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/config.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body class="hidden-dashboard-body">
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Hidden Seller Dashboard</span>
+    <h1 id="sellerWelcome">Seller Dashboard</h1>
+    <p>This dashboard is not linked from the public website menu. It is accessible only by direct URL and login.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container dashboard-grid">
+    <div class="dashboard-card">
+      <h2>Seller Profile</h2>
+      <div id="sellerProfileBox"></div>
+      <button class="btn secondary" onclick="sellerLogout()">Logout</button>
+    </div>
+    <div class="dashboard-card">
+      <h2>My Submitted Properties</h2>
+      <div id="sellerPropertiesBox">Loading properties...</div>
+    </div>
+
+    <form class="form-card" onsubmit="submitSellerDashboardProperty(event)">
+      <h2>Post / Upload Property</h2>
+      <p class="form-note">Submitted properties remain hidden until admin verifies, edits, and approves them.</p>
+      <div class="grid-2">
+        <label>Country
+          <select name="country" class="country-select" required><option value="">Select Country</option></select>
+        </label>
+        <label>Location<input name="location" placeholder="City / District" required></label>
+      </div>
+      <div class="grid-2">
+        <label>Property Type
+          <select name="propertyType" required>
+            <option value="">Select</option>
+            <option>Apartment</option>
+            <option>Villa</option>
+            <option>House</option>
+            <option>Land</option>
+            <option>Commercial</option>
+          </select>
+        </label>
+        <label>Area / Locality<input name="locality" required></label>
+      </div>
+      <label>Exact Address<textarea name="exactAddress" rows="2" placeholder="Backend only"></textarea></label>
+      <div class="grid-2">
+        <label>Land / Built-up Area<input name="sizeText" placeholder="Example: 10 cents / 1600 sqft"></label>
+        <label>Expected Price<input name="expectedPrice" placeholder="Backend only"></label>
+      </div>
+      <label>Public Price Range<input name="publicPriceRange" placeholder="Example: 80 to 90 Lakhs"></label>
+      <label>Description<textarea name="description" rows="4"></textarea></label>
+      <label>Highlights<input name="highlights" placeholder="Example: Parking, Road access, Nearby school"></label>
+      <label>Photo URLs<textarea name="photoUrls" rows="3" placeholder="Paste Google Drive/GitHub image URLs separated by comma"></textarea></label>
+      <label>Document URLs<textarea name="documentUrls" rows="2" placeholder="Optional. Backend only. Paste document links separated by comma"></textarea></label>
+      <button class="btn primary full" type="submit">Submit to Admin for Approval</button>
+      <div class="form-status" aria-live="polite"></div>
+    </form>
+
+  </div>
+</section>
+
+</main>
+</body>
+</html>
