@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home | Bdeals Global Properties</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#163d5c">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BGP">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+  <meta name="description" content="Trusted real estate mediator platform connecting verified property sellers and genuine buyers through a private managed process.">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/config.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top-utility-bar brand-top-bar">
+    <div class="container top-utility-wrap brand-top-wrap">
+      <a class="brand top-brand" href="index.html" aria-label="Bdeals Global Properties Home">
+        <span class="brand-mark">BG</span>
+        <span>
+          <strong>Bdeals Global Properties</strong>
+          <small>Verified Properties. Genuine Buyers. Secure Deals.</small>
+        </span>
+      </a>
+
+      <div class="top-action-group">
+        <div class="top-country-picker" title="Select Country">
+          <span class="top-country-icon">🌐</span>
+          <select id="topCountrySelect" class="country-select top-country-select" onchange="handleTopCountryChange(this.value)" aria-label="Select country">
+            <option value="">Country</option>
+          </select>
+        </div>
+
+        <a class="top-sell-property-btn" href="sell-property.html">Sell Your Property</a>
+
+        <button id="pwaInstallBtn" class="install-app-btn visible" type="button" onclick="installPWA()" title="Install App">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3a1 1 0 0 1 1 1v8.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42l2.3 2.3V4a1 1 0 0 1 1-1ZM5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z"></path>
+          </svg>
+          <span>Install App</span>
+        </button>
+
+        <a class="login-icon-link customer-login-icon-only" href="customer-login.html" aria-label="Customer Login / Signup" title="Customer Login / Signup">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5Zm0 2c-4.42 0-8 2.02-8 4.5V21h16v-2.5c0-2.48-3.58-4.5-8-4.5Z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap screenshot-header menu-only-header">
+    <button class="menu-toggle" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+
+    <nav id="mainMenu" class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="buy-property.html">Buy Property</a>
+      <a href="sell-property.html">Sell Property</a>
+      <a href="post-requirement.html">Post Requirement</a>
+      <a href="builders.html">Builders</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="banner-slider-section">
+  <div class="container">
+    <div id="homeBannerSlider" class="banner-slider" aria-label="Promotional banners">
+      <div class="banner-slide active">
+        <div class="banner-content">
+          <span class="eyebrow">Bdeals Global Properties</span>
+          <h2>Verified Properties. Genuine Buyers. Secure Deals.</h2>
+          <p>Backend-controlled banner area. Add, hide, or change banners from Google Sheets.</p>
+          <a class="btn primary" href="post-requirement.html">Post Requirement</a>
+        </div>
+      </div>
+      <button class="banner-arrow prev" type="button" onclick="moveBanner(-1)" aria-label="Previous banner">‹</button>
+      <button class="banner-arrow next" type="button" onclick="moveBanner(1)" aria-label="Next banner">›</button>
+      <div id="bannerDots" class="banner-dots" aria-label="Banner navigation"></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="country-location-section">
+  <div class="container">
+    <div class="country-location-bar">
+      <div>
+        <span class="eyebrow">Select Your Location</span>
+        <h3>Find property options by country and location</h3>
+      </div>
+      <div class="country-location-controls">
+        <label>Country
+          <select id="homeCountryFilter" class="country-select visible-country-select">
+            <option value="">Select Country</option>
+          </select>
+        </label>
+        <label>Location
+          <input id="homeLocationFilter" type="text" placeholder="City / District / Area">
+        </label>
+        <button class="btn primary" type="button" onclick="goToBuyWithLocation()">Search Properties</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Trusted Real Estate Mediation Platform</span>
+      <h1>Buy and sell property through a secure managed process.</h1>
+      <p>We connect genuine buyers and verified sellers without exposing private contact details, documents, or exact property information publicly.</p>
+      <div class="hero-actions"><a class="btn primary" href="buy-property.html">Browse Properties</a><a class="btn secondary" href="sell-property.html">List Your Property</a></div>
+      <div class="trust-row"><span>Private Backend</span><span>Verified Leads</span><span>Managed Negotiation</span></div>
+    </div>
+    <div class="hero-card"><h3>How we protect deals</h3><ul class="check-list"><li>Seller and buyer details remain hidden.</li><li>Exact location is shared only after verification.</li><li>Site visits and negotiations are coordinated by the platform.</li><li>Every enquiry, visit, and deal stage is tracked in the backend.</li></ul></div>
+  </div>
+</section>
+<section class="section light"><div class="container"><div class="section-title"><span class="eyebrow">Featured Properties</span><h2>Controlled public listings</h2><p>Only basic property details are displayed publicly. Sensitive data stays protected in the backend.</p></div><div id="featuredProperties" class="property-grid"></div><div class="center mt-24"><a class="btn primary" href="buy-property.html">View More Properties</a></div></div></section>
+<section class="section"><div class="container cards-3"><div class="info-card"><span class="icon">01</span><h3>For Buyers</h3><p>Submit your requirement and receive shortlisted verified property options through our managed team.</p><a href="post-requirement.html">Post Requirement →</a></div><div class="info-card"><span class="icon">02</span><h3>For Sellers</h3><p>Submit your property details privately. We verify, list limited information, and bring serious buyers.</p><a href="sell-property.html">Sell Property →</a></div><div class="info-card"><span class="icon">03</span><h3>For Builders</h3><p>Get buyer lead support, site visit coordination, and project sales assistance through a mediator model.</p><a href="builders.html">List Project →</a></div></div></section>
+<section class="section dark"><div class="container split"><div><span class="eyebrow">No Direct Dealing Policy</span><h2>The platform remains central to every transaction.</h2><p>We do not publish seller phone numbers, buyer contact details, exact addresses, ownership documents, negotiation limits, or internal notes.</p></div><div class="privacy-box"><h3>Public users can see</h3><p>Property type, locality, approximate size, price range, basic photos, highlights, and property code.</p><h3>Only admin can see</h3><p>Buyer/seller details, exact address, documents, negotiation details, commission terms, follow-ups, and deal status.</p></div></div></section>
+<section class="section"><div class="container cta-panel"><h2>Ready to start a secure property transaction?</h2><p>Buyers can post requirements. Sellers can list properties. Our team will manage the next step.</p><div class="hero-actions center"><a class="btn primary" href="post-requirement.html">I Want to Buy</a><a class="btn secondary" href="sell-property.html">I Want to Sell</a></div></div></section></main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><h3>Bdeals Global Properties</h3><p>Verified Properties. Genuine Buyers. Secure Deals.</p><p class="muted">Buyer and seller details are never shown publicly.</p></div>
+    <div><h4>Quick Links</h4><a href="buy-property.html">Buy Property</a><a href="sell-property.html">Sell Property</a><a href="post-requirement.html">Post Requirement</a><a href="builders.html">Builders and Developers</a>
+      <a href="refer-and-win.html">Refer & Win</a></div>
+    <div><h4>Trust Policy</h4><p>No direct dealing. No public phone numbers. No exact address disclosure before verification.</p></div>
+  </div>
+  <div class="footer-bottom">© <span id="year"></span> Bdeals Global Properties. All rights reserved.</div>
+</footer>
+
+<nav class="bottom-menu" aria-label="Bottom menu">
+  <a href="index.html">
+    <span class="bottom-icon">⌂</span>
+    <span>Home</span>
+  </a>
+  <a href="buy-property.html">
+    <span class="bottom-icon">⌕</span>
+    <span>Buy</span>
+  </a>
+  <a href="sell-property.html">
+    <span class="bottom-icon">＋</span>
+    <span>Sell</span>
+  </a>
+  <a href="post-requirement.html">
+    <span class="bottom-icon">✎</span>
+    <span>Requirement</span>
+  </a>
+  <a href="customer-login.html">
+    <span class="bottom-icon">◉</span>
+    <span>Login</span>
+  </a>
+</nav>
+
+</body>
+</html>
