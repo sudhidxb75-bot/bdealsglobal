@@ -1,0 +1,23 @@
+Bdeals Global Properties - Dashboard Portals V1.4.3
+
+Customer Dashboard
+- customer-login.html
+- customer-dashboard.html
+- Shows profile, requirements, enquiries, referrals, and reward status.
+
+Seller Dashboard
+- seller-login.html
+- seller-dashboard.html
+- Hidden from public menu. Shows property approval status, enquiries by property code, site visit/deal progress. Buyer contact remains hidden.
+
+Admin Dashboard
+- admin-login.html
+- admin-dashboard.html
+- Hidden from public menu. Uses Settings > AdminDashboardPIN. Default MVP PIN: 123456. Change before launch.
+- Shows counts, pending properties, enquiries, requirements, referrals, proposals, and deals.
+
+Backend Actions Added
+- customerDashboardData
+- sellerDashboardData
+- adminDashboardData
+- adminLogin via action=submit&formType=adminLogin

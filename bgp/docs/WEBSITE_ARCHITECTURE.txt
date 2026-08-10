@@ -1,0 +1,166 @@
+WEBSITE ARCHITECTURE - REAL ESTATE MEDIATOR PLATFORM
+====================================================
+
+Public Website Pages
+--------------------
+Home
+Buy Property
+Sell Property
+Post Requirement
+Builders and Developers
+How It Works
+Services
+Contact
+Property Details
+
+Backend Modules
+---------------
+Settings
+Sellers
+Buyers
+Properties
+Buyer Requirements
+Enquiries
+Property Matches
+Site Visits
+Negotiations
+Deals
+Commission Payments
+Follow-ups
+Builder Enquiries
+Contact Enquiries
+Staff
+Activity Log
+
+Public Listing Rule
+-------------------
+Public listings must never display:
+Seller name
+Seller phone
+Buyer details
+Exact address
+Survey number
+Ownership documents
+Negotiation limit
+Commission agreement
+Internal notes
+
+Revenue Model
+-------------
+Success commission
+Property listing fee
+Featured listing fee
+Buyer service fee
+Builder/developer package
+Documentation coordination charges
+Loan/legal partner referral income
+
+Technology Version
+------------------
+Frontend: HTML, CSS, JavaScript, GitHub Pages
+Backend: Google Sheets, Google Apps Script, Google Drive for document links
+
+Future Upgrade
+--------------
+Buyer login
+Seller limited login
+Staff login
+Advanced CRM
+Automated matching
+WhatsApp Business API
+Payment gateway
+Legal compliance pages
+Mobile app
+Multi-city franchise dashboard
+
+
+Backend-controlled sliding banners
+----------------------------------
+This version includes a home page banner slider controlled from the Google Sheets backend.
+
+A new sheet named Banners is included with these fields:
+BannerID, Title, Subtitle, Badge, ButtonText, ButtonLink, ImageURL, SortOrder, StartDate, EndDate, Status, Remarks.
+
+How to show a banner:
+1. Open the Banners sheet.
+2. Add banner title, subtitle, button text, button link, and image URL.
+3. Set SortOrder as 1, 2, 3 etc.
+4. Set Status = Active.
+5. Optional: use StartDate and EndDate to schedule banners.
+6. Refresh the website.
+
+Recommended banner image size:
+1920 x 520 px for desktop.
+For mobile-safe design, keep important text in the center-left area and avoid placing critical text inside the image itself.
+
+
+V1.2 Architecture Additions
+---------------------------
+Visible frontend:
+- Customer Login / Signup
+- Customer Dashboard
+- Refer & Win
+- Country and location selection in major forms
+
+Hidden direct URLs:
+- seller-login.html
+- seller-dashboard.html
+
+Backend only:
+- Admin remains in Google Sheets and Apps Script.
+- Seller dashboard is not linked from the public menu.
+
+New backend sheets:
+- Countries
+- Customers
+- Referrals
+
+
+
+V1.3 Architecture Additions
+---------------------------
+Header:
+- Screenshot-style large desktop header.
+- Customer login icon instead of text link.
+- Refer & Win moved into homepage CTA and standalone page.
+
+Portal policy:
+- Customer portal is visible.
+- Seller portal is hidden from frontend navigation and only available by direct URL.
+- Admin backend is Google Sheets + Apps Script only, with no public frontend link.
+
+Admin approval workflow:
+- Seller-submitted properties are always private by default.
+- Admin verifies, edits, approves, and publishes from the Properties sheet.
+- Public API returns only approved records.
+
+Proposal workflow:
+- New Proposals sheet.
+- Admin prepares client proposals from backend.
+- Apps Script creates proposal document and records URL/status/follow-up details.
+
+
+
+V1.3.2 Reporting Architecture
+-----------------------------
+New admin-only backend sheets:
+- Report Dashboard
+- Print - New Enquiries
+- Print - Property Review
+- Print - Buyer Requirements
+- Print - Site Visits
+- Print - Proposals
+- Archive - Properties
+- Archive - Enquiries
+- Archive - Buyer Requirements
+- Archive - Deals
+- Archive - Proposals
+- Archive Log
+
+Admin menu actions:
+- Generate Report Dashboard
+- Generate Print Sheets
+- Clear Print Sheets
+- Archive Closed / Lost Records
+
+No frontend access is provided for reports, print sheets, or archive tools.
