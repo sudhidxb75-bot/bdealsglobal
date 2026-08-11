@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Seller Login | Bdeals Global Properties</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#163d5c">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BGP">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+  <meta name="description" content="Trusted real estate mediator platform connecting verified property sellers and genuine buyers through a private managed process.">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/config.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body class="hidden-dashboard-body">
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Seller Access</span>
+    <h1>Seller Login</h1>
+    <p>This page is not linked from the public website menu. Use only the direct URL provided by admin.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container auth-grid single">
+    <form class="form-card" onsubmit="sellerLogin(event)">
+      <h2>Seller Login</h2>
+      <label>Registered Phone or Email<input name="loginId" required></label>
+      <label>Password<input name="password" type="password" required></label>
+      <button class="btn primary full" type="submit">Login to Seller Dashboard</button>
+      <p class="form-note">Seller access is created when a seller submits property details with a dashboard password, or when admin updates seller credentials.</p>
+      <div class="form-status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin Login | Bdeals Global Properties</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#163d5c">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BGP">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+  <meta name="description" content="Trusted real estate mediator platform connecting verified property sellers and genuine buyers through a private managed process.">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/config.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body class="hidden-dashboard-body admin-body">
+<main>
+<section class="page-hero dashboard-hero admin-hero">
+  <div class="container">
+    <span class="eyebrow">Hidden Admin Access</span>
+    <h1>Admin Dashboard Login</h1>
+    <p>This page is not linked from the public menu. Use only the direct URL and change the default PIN before launch.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container auth-grid single">
+    <form class="form-card" onsubmit="adminLogin(event)">
+      <h2>Admin Login</h2>
+      <label>Admin PIN / Access Key<input name="adminKey" type="password" required autocomplete="current-password"></label>
+      <button class="btn primary full" type="submit">Login to Admin Dashboard</button>
+      <p class="form-note">Default MVP PIN is 123456. Change Settings → AdminDashboardPIN in Google Sheets before going live.</p>
+      <div class="form-status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+</main>
+</body>
+</html>
