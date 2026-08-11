@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Services | Bdeals Global Properties</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#163d5c">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BGP">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+  <meta name="description" content="Trusted real estate mediator platform connecting verified property sellers and genuine buyers through a private managed process.">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/config.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="top-utility-bar brand-top-bar">
+    <div class="container top-utility-wrap brand-top-wrap">
+      <a class="brand top-brand" href="index.html" aria-label="Bdeals Global Properties Home">
+        <span class="brand-mark">BG</span>
+        <span>
+          <strong>Bdeals Global Properties</strong>
+          <small>Verified Properties. Genuine Buyers. Secure Deals.</small>
+        </span>
+      </a>
+
+      <div class="top-action-group">
+        <div class="top-country-picker" title="Select Country">
+          <span class="top-country-icon">🌐</span>
+          <select id="topCountrySelect" class="country-select top-country-select" onchange="handleTopCountryChange(this.value)" aria-label="Select country">
+            <option value="">Country</option>
+          </select>
+        </div>
+
+        <a class="top-sell-property-btn" href="sell-property.html">Sell Your Property</a>
+
+        <button id="pwaInstallBtn" class="install-app-btn visible" type="button" onclick="installPWA()" title="Install App">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3a1 1 0 0 1 1 1v8.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42l2.3 2.3V4a1 1 0 0 1 1-1ZM5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z"></path>
+          </svg>
+          <span>Install App</span>
+        </button>
+
+        <a class="login-icon-link customer-login-icon-only" href="customer-login.html" aria-label="Customer Login / Signup" title="Customer Login / Signup">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5Zm0 2c-4.42 0-8 2.02-8 4.5V21h16v-2.5c0-2.48-3.58-4.5-8-4.5Z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container nav-wrap screenshot-header menu-only-header">
+    <button class="menu-toggle" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+
+    <nav id="mainMenu" class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="buy-property.html">Buy Property</a>
+      <a href="sell-property.html">Sell Property</a>
+      <a href="post-requirement.html">Post Requirement</a>
+      <a href="builders.html">Builders</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="page-hero"><div class="container"><span class="eyebrow">Services</span><h1>End-to-end property mediation support</h1><p>Services can be offered as commission-based, fixed-fee, or premium assistance depending on the transaction.</p></div></section>
+<section class="section"><div class="container service-grid"><div class="service-card"><h3>Property Selling Support</h3><p>Controlled listing, buyer filtering, visit coordination, and negotiation support.</p></div><div class="service-card"><h3>Property Buying Support</h3><p>Requirement collection, verified shortlisting, and managed property visits.</p></div><div class="service-card"><h3>Builder Project Sales</h3><p>Lead capture, buyer follow-up, project listing, and site visit scheduling.</p></div><div class="service-card"><h3>Site Visit Coordination</h3><p>Schedule, confirm, reschedule, and track buyer feedback after every visit.</p></div><div class="service-card"><h3>Negotiation Support</h3><p>Keep buyer and seller communication controlled through platform mediation.</p></div><div class="service-card"><h3>Documentation Coordination</h3><p>Coordinate with legal, banking, and registration support partners when required.</p></div><div class="service-card"><h3>NRI Property Support</h3><p>Assist NRI sellers and buyers through a private managed process.</p></div><div class="service-card"><h3>Loan Assistance Coordination</h3><p>Connect eligible buyers to loan support partners without exposing seller details.</p></div></div></section><section class="section dark"><div class="container cta-panel transparent"><h2>Revenue options for the platform</h2><p>Success commission, listing fees, buyer service fees, builder packages, documentation support charges, and premium assistance packages.</p></div></section></main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><h3>Bdeals Global Properties</h3><p>Verified Properties. Genuine Buyers. Secure Deals.</p><p class="muted">Buyer and seller details are never shown publicly.</p></div>
+    <div><h4>Quick Links</h4><a href="buy-property.html">Buy Property</a><a href="sell-property.html">Sell Property</a><a href="post-requirement.html">Post Requirement</a><a href="builders.html">Builders and Developers</a>
+      <a href="refer-and-win.html">Refer & Win</a></div>
+    <div><h4>Trust Policy</h4><p>No direct dealing. No public phone numbers. No exact address disclosure before verification.</p></div>
+  </div>
+  <div class="footer-bottom">© <span id="year"></span> Bdeals Global Properties. All rights reserved.</div>
+</footer>
+
+<nav class="bottom-menu" aria-label="Bottom menu">
+  <a href="index.html">
+    <span class="bottom-icon">⌂</span>
+    <span>Home</span>
+  </a>
+  <a href="buy-property.html">
+    <span class="bottom-icon">⌕</span>
+    <span>Buy</span>
+  </a>
+  <a href="sell-property.html">
+    <span class="bottom-icon">＋</span>
+    <span>Sell</span>
+  </a>
+  <a href="post-requirement.html">
+    <span class="bottom-icon">✎</span>
+    <span>Requirement</span>
+  </a>
+  <a href="customer-login.html">
+    <span class="bottom-icon">◉</span>
+    <span>Login</span>
+  </a>
+</nav>
+
+</body>
+</html>
